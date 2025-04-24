@@ -3,17 +3,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirect to Certificate Form</title>
-  <script>
-    window.onload = function () {
-      window.open(
-        "https://script.google.com/a/macros/edencentre.org/s/AKfycbxzpXzoHc0UokBLzzZYJDBIgOW3njgQJzUFh8VeYbTSM7BrbwA2VXdCFrrFaLGCx4Ho/exec",
-        "_blank"
-      );
-    };
-  </script>
+  <title>ECDC Certificate Checker</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    iframe {
+      border: none;
+      height: 100%;
+      width: 100%;
+      display: block;
+    }
+  </style>
 </head>
 <body>
-  <p>If the form didn't open, <a href="https://script.google.com/a/macros/edencentre.org/s/AKfycbxzpXzoHc0UokBLzzZYJDBIgOW3njgQJzUFh8VeYbTSM7BrbwA2VXdCFrrFaLGCx4Ho/exec" target="_blank">click here</a>.</p>
+  <iframe src="https://script.google.com/a/macros/edencentre.org/s/AKfycbxzpXzoHc0UokBLzzZYJDBIgOW3njgQJzUFh8VeYbTSM7BrbwA2VXdCFrrFaLGCx4Ho/exec" allowfullscreen loading="lazy" allow="camera"></iframe>
 </body>
 </html>
