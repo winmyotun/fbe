@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ECDC FBE Entry Form</title>
   <style>
     html, body {
@@ -10,6 +10,8 @@
       padding: 0;
       height: 100%;
       width: 100%;
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
     }
 
     iframe {
@@ -18,9 +20,42 @@
       width: 100%;
       display: block;
     }
+
+    .no-frame {
+      display: none;
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+    }
   </style>
 </head>
 <body>
-  <iframe src="https://script.google.com/a/macros/edencentre.org/s/AKfycbyFUjhKMDPBd75ejkMujI9whjFj2hz6QrTUjD3yeyNLy06MDgCP0YbAVuRnJY1Hgsk7/exec" allowfullscreen loading="lazy" allow="camera"></iframe>
+  <!-- Your Apps Script Web App iframe -->
+  <iframe 
+    src="https://script.google.com/macros/s/AKfycbyFUjhKMDPBd75ejkMujI9whjFj2hz6QrTUjD3yeyNLy06MDgCP0YbAVuRnJY1Hgsk7/exec"
+    allowfullscreen
+    loading="lazy"
+    allow="camera">
+  </iframe>
+
+  <!-- Fallback message if iframe is blocked -->
+  <div class="no-frame">
+    <h2>⚠ Unable to load the form here</h2>
+    <p>Your browser blocked this page from loading inside the site for security reasons.</p>
+    <p><a href="https://script.google.com/macros/s/AKfycbyFUjhKMDPBd75ejkMujI9whjFj2hz6QrTUjD3yeyNLy06MDgCP0YbAVuRnJY1Hgsk7/exec" target="_blank">
+      👉 Click here to open the form in a new tab
+    </a></p>
+  </div>
+
+  <script>
+    // Optional: detect if iframe is blocked
+    const iframe = document.querySelector("iframe");
+    iframe.onerror = () => {
+      iframe.style.display = "none";
+      document.querySelector(".no-frame").style.display = "block";
+    };
+  </script>
 </body>
 </html>
